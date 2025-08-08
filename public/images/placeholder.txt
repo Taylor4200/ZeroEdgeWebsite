@@ -1,0 +1,35 @@
+This directory should contain:
+
+/games/
+  /mysterious-night/
+    - thumb.jpg
+    - hero.jpg
+  /neon-empire/
+    - thumb.jpg
+    - hero.jpg
+  /crystal-quest/
+    - thumb.jpg
+    - hero.jpg
+  /cosmic-fortune/
+    - thumb.jpg
+    - hero.jpg
+  /dragon-realm/
+    - thumb.jpg
+    - hero.jpg
+  /ocean-treasure/
+    - thumb.jpg
+    - hero.jpg
+
+/news/
+  - mysterious-night-launch.jpg
+  - partnership-announcement.jpg
+  - studio-expansion.jpg
+  - award-nomination.jpg
+
+/partners/
+  - alpha-logo.png
+  - beta-logo.png
+  - gamma-logo.png
+  - delta-logo.png
+
+For production, replace these placeholder images with actual game screenshots, news images, and partner logos.

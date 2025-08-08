@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Gaming Platform Alpha",
+    "logo": "/images/partners/alpha-logo.png",
+    "link": "https://gamingalpha.com"
+  },
+  {
+    "name": "Slot Network Beta",
+    "logo": "/images/partners/beta-logo.png",
+    "link": "https://slotnetworkbeta.com"
+  },
+  {
+    "name": "Casino Solutions Gamma",
+    "logo": "/images/partners/gamma-logo.png",
+    "link": "https://casinosolutionsgamma.com"
+  },
+  {
+    "name": "Game Distribution Delta",
+    "logo": "/images/partners/delta-logo.png",
+    "link": "https://gamedistributiondelta.com"
+  }
+]
