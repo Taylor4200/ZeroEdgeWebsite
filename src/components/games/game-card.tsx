@@ -12,6 +12,9 @@ interface GameCardProps {
 }
 
 export function GameCard({ game }: GameCardProps) {
+  // Get custom Y position from game data, default to center (50%)
+  const thumbYPosition = game.thumbYPosition || '50%'
+  
   return (
     <Link href={`/games/${game.slug}`}>
       <Card className="group overflow-hidden h-full bg-[color:var(--bg)] border border-[color:var(--muted)]/20">
@@ -21,6 +24,7 @@ export function GameCard({ game }: GameCardProps) {
             alt={game.title}
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-[1.03] group-hover:rotate-[1.5deg]"
+            style={{ objectPosition: `center ${thumbYPosition}` }}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
           <div className="absolute inset-0 bg-black/45" />

@@ -13,7 +13,7 @@ export default function TitleReel({
   tagline = 'Designing unique stories to seize every edge',
   holdTaglineMs = 900,
   explodeSec = 1.1,
-  hoverMs = 700,
+  hoverMs = 0,
   stepMs = 120,
   landSec = 0.55,
   fadeSpeed = 0.3, // How quickly unused letters fade (0.1 = very fast, 1.0 = slow)

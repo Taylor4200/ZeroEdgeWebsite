@@ -73,7 +73,7 @@ export function Footer() {
           {/* Bottom Bar */}
           <div className="border-t border-[color:var(--muted)]/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-[color:var(--muted)]/60 text-sm">
-              © 2024 ZeroEdgeStudios. All rights reserved.
+              © 2025 ZeroEdgeStudios. All rights reserved.
             </p>
             <div className="flex items-center space-x-4 mt-4 md:mt-0">
               <div className="flex items-center gap-2 text-xs text-[color:var(--muted)]/60">

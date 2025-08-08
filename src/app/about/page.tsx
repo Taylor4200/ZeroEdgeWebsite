@@ -5,24 +5,24 @@ import { Card } from '@/components/ui/card'
 
 const milestones = [
   {
-    year: '2024',
+    year: '2025',
     title: 'Studio Launch',
     description: 'ZeroEdgeStudios officially launches with our first game, Mysterious Night.'
   },
   {
-    year: '2024',
+    year: '2025',
     title: 'Partnership Expansion',
     description: 'Secured partnerships with leading gaming platforms worldwide.'
   },
   {
-    year: '2024',
+    year: '2025',
     title: 'Team Growth',
     description: 'Expanded our development team with top talent in game mathematics and design.'
   },
   {
-    year: '2024',
+    year: '2025',
     title: 'Award Recognition',
-    description: 'Nominated for Best New Studio at the prestigious Gaming Awards 2024.'
+    description: 'Nominated for Best New Studio at the prestigious Gaming Awards 2025.'
   }
 ]
 

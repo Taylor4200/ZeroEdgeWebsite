@@ -6,13 +6,13 @@ import { Container } from '@/components/ui/container'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { GameCard } from '@/components/games/game-card'
-import { getLiveGames, getLatestNews, getPartners } from '@/lib/data'
+import { getGames, getLatestNews, getPartners } from '@/lib/data'
 import { useReducedMotion } from 'framer-motion'
 import { formatDate } from '@/lib/utils'
 import TitleReel from '@/components/TitleReel'
 
 export default function HomePage() {
-  const featuredGames = getLiveGames().slice(0, 6)
+  const featuredGames = getGames().slice(0, 6)
   const latestNews = getLatestNews(3)
   const partners = getPartners()
   const prefersReducedMotion = useReducedMotion()

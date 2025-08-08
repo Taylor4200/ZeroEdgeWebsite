@@ -3,10 +3,10 @@
     "slug": "mysterious-night",
     "title": "Mysterious Night",
     "tagline": "Full moon. Full potential.",
-    "thumb": "/images/games/mysterious-night/thumb.jpg",
-    "hero": "/images/games/mysterious-night/hero.jpg",
+    "thumb": "/images/games/Mysterious-Night/thumb.png",
+    "hero": "/images/games/Mysterious-Night/hero.jpg",
     "status": "live",
-    "mechanics": ["5x3", "10 Lines", "Free Spins", "Multiplier Wilds"],
+    "mechanics": ["2x-100x wilds", "10,000x Max Win", "Free Spins", "Multiplier Wilds"],
     "rtp_range": "95.5%–96.2%",
     "volatility": "High",
     "max_win": "10,000x",
@@ -16,15 +16,16 @@
       "Double Boost mode (optional feature buy)"
     ],
     "demo_url": "#",
-    "presskit": "/presskits/mysterious-night.zip"
+    "presskit": "/presskits/mysterious-night.zip",
+    "thumbYPosition": "45%"
   },
   {
-    "slug": "neon-empire",
+    "slug": "the-heist",
     "title": "The Heist",
-    "tagline": "Cyberpunk meets fortune.",
-    "thumb": "/images/games/neon-empire/thumb.jpg",
-    "hero": "/images/games/neon-empire/hero.jpg",
-    "status": "live",
+    "tagline": "Big Score, Bigger Stakes.",
+    "thumb": "/images/games/The-Heist/thumb.png",
+    "hero": "/images/games/The-Heist/hero.jpg",
+    "status": "coming-soon",
     "mechanics": ["5x4", "40 Lines", "Free Spins", "Cascading Reels"],
     "rtp_range": "96.1%–96.8%",
     "volatility": "Medium-High",
@@ -35,82 +36,27 @@
       "Neon Boost feature buy"
     ],
     "demo_url": "#",
-    "presskit": "/presskits/neon-empire.zip"
+    "presskit": "/presskits/neon-empire.zip",
+    "thumbYPosition": "65%"
   },
   {
-    "slug": "crystal-quest",
+    "slug": "katana-protocol",
     "title": "Katana Protocol",
-    "tagline": "Ancient magic, modern wins.",
-    "thumb": "/images/games/crystal-quest/thumb.jpg",
-    "hero": "/images/games/crystal-quest/hero.jpg",
-    "status": "live",
+    "tagline": "Sharp Steel, Silent Chaos.",
+    "thumb": "/images/games/Katana-Protocol/thumb.png",
+    "hero": "/images/games/Katana-Protocol/hero.jpg",
+    "status": "coming-soon",
     "mechanics": ["6x4", "50 Lines", "Free Spins", "Sticky Wilds"],
     "rtp_range": "95.8%–96.5%",
     "volatility": "Medium",
-    "max_win": "3,000x",
+    "max_win": "5,000x",
     "features": [
       "Crystal Cascade Free Spins",
       "Ancient Wild multipliers",
       "Crystal Power feature buy"
     ],
     "demo_url": "#",
-    "presskit": "/presskits/crystal-quest.zip"
-  },
-  {
-    "slug": "cosmic-fortune",
-    "title": "Cosmic Fortune",
-    "tagline": "Stars align for massive wins.",
-    "thumb": "/images/games/cosmic-fortune/thumb.jpg",
-    "hero": "/images/games/cosmic-fortune/hero.jpg",
-    "status": "coming-soon",
-    "mechanics": ["5x5", "25 Lines", "Free Spins", "Expanding Wilds"],
-    "rtp_range": "96.0%–96.7%",
-    "volatility": "High",
-    "max_win": "15,000x",
-    "features": [
-      "Cosmic Storm Free Spins",
-      "Stellar Wild multipliers",
-      "Galaxy Boost feature buy"
-    ],
-    "demo_url": "#",
-    "presskit": "/presskits/cosmic-fortune.zip"
-  },
-  {
-    "slug": "dragon-realm",
-    "title": "Dragon Realm",
-    "tagline": "Fire-breathing wins await.",
-    "thumb": "/images/games/dragon-realm/thumb.jpg",
-    "hero": "/images/games/dragon-realm/hero.jpg",
-    "status": "live",
-    "mechanics": ["5x3", "20 Lines", "Free Spins", "Sticky Wilds"],
-    "rtp_range": "95.3%–96.0%",
-    "volatility": "Medium-High",
-    "max_win": "8,000x",
-    "features": [
-      "Dragon's Breath Free Spins",
-      "Fire Wild multipliers",
-      "Dragon's Fury feature buy"
-    ],
-    "demo_url": "#",
-    "presskit": "/presskits/dragon-realm.zip"
-  },
-  {
-    "slug": "ocean-treasure",
-    "title": "Ocean Treasure",
-    "tagline": "Dive deep for legendary wins.",
-    "thumb": "/images/games/ocean-treasure/thumb.jpg",
-    "hero": "/images/games/ocean-treasure/hero.jpg",
-    "status": "coming-soon",
-    "mechanics": ["6x5", "30 Lines", "Free Spins", "Cascading Reels"],
-    "rtp_range": "96.2%–96.9%",
-    "volatility": "Medium",
-    "max_win": "6,000x",
-    "features": [
-      "Deep Sea Free Spins",
-      "Pearl Wild multipliers",
-      "Ocean's Bounty feature buy"
-    ],
-    "demo_url": "#",
-    "presskit": "/presskits/ocean-treasure.zip"
+    "presskit": "/presskits/crystal-quest.zip",
+    "thumbYPosition": "10%"
   }
 ]
