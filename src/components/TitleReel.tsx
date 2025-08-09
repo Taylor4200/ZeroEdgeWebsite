@@ -8,6 +8,15 @@ const FINAL_TEXT = 'ZeroEdgeStudios';
 type Src = { id: string; ch: string };
 type Pick = { srcId: string; from: string; isGhost: boolean };
 
+// Helper function to check if age gate has been passed
+function hasPassedAgeGate(): boolean {
+  if (typeof document === 'undefined') return false;
+  return document.cookie
+    .split('; ')
+    .find(row => row.startsWith('ze_age_ok='))
+    ?.split('=')[1] === '1';
+}
+
 export default function TitleReel({
   className = '',
   tagline = 'Designing unique stories to seize every edge',
@@ -29,8 +38,8 @@ export default function TitleReel({
 }) {
   const reduced = useReducedMotion();
 
-  type Phase = 'tagline' | 'explode' | 'hover' | 'recall' | 'done';
-  const [phase, setPhase] = useState<Phase>('tagline');
+  type Phase = 'waiting' | 'tagline' | 'explode' | 'hover' | 'recall' | 'done';
+  const [phase, setPhase] = useState<Phase>('waiting');
   const [recallIndex, setRecallIndex] = useState(-1);
   const [hasPlayed, setHasPlayed] = useState(false);
   const hasPlayedRef = useRef(false);
@@ -44,6 +53,30 @@ export default function TitleReel({
     //   hasPlayedRef.current = true;
     // }
   }, []);
+
+  // Check for age gate completion and start animation
+  useEffect(() => {
+    if (phase === 'waiting' && hasPassedAgeGate()) {
+      setPhase('tagline');
+    }
+  }, [phase]);
+
+  // Monitor for age gate completion
+  useEffect(() => {
+    const checkAgeGate = () => {
+      if (phase === 'waiting' && hasPassedAgeGate()) {
+        setPhase('tagline');
+      }
+    };
+
+    // Check immediately
+    checkAgeGate();
+
+    // Set up interval to check for age gate completion
+    const interval = setInterval(checkAgeGate, 100);
+
+    return () => clearInterval(interval);
+  }, [phase]);
 
   const words = useMemo(() => tagline.split(/(\s+)/), [tagline]);
   const sourceLetters: Src[] = useMemo(() => {
@@ -161,7 +194,7 @@ export default function TitleReel({
   const fadeProgress = Math.min(1, Math.max(0, (recallIndex + 1) / FINAL_TEXT.length));
 
   // Early return after all hooks are called
-  if (reduced || hasPlayedRef.current) {
+  if (reduced || hasPlayedRef.current || phase === 'waiting') {
     return (
       <div className={`flex justify-center text-[clamp(36px,8vw,104px)] font-extrabold leading-none text-white ${className}`} aria-label={FINAL_TEXT}>
         <span style={{ filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.25))' }}>
