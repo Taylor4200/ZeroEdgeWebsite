@@ -231,25 +231,11 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold mb-6">Get In Touch</h2>
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-semibold mb-1">Business Development</h3>
+                  <h3 className="font-semibold mb-1">Contact Us</h3>
                   <p className="text-white/60 text-sm">
-                    For partnership opportunities and distribution inquiries
+                    For all inquiries, partnerships, and support
                   </p>
-                  <p className="text-neon-purple">partnerships@zeroedgestudios.com</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-1">Technical Support</h3>
-                  <p className="text-white/60 text-sm">
-                    For technical questions and integration support
-                  </p>
-                  <p className="text-neon-purple">tech@zeroedgestudios.com</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-1">General Inquiries</h3>
-                  <p className="text-white/60 text-sm">
-                    For all other questions and information
-                  </p>
-                  <p className="text-neon-purple">hello@zeroedgestudios.com</p>
+                  <p className="text-neon-purple">contact@zeroedgestudios.com</p>
                 </div>
               </div>
             </Card>
