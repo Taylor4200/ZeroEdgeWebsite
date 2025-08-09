@@ -1,5 +1,13 @@
 [
   {
+    "slug": "stake-engine-announcement",
+    "title": "Stake Engine Officially Announced",
+    "date": "2025-04-28",
+    "excerpt": "Stake unveils Stake Engine — a powerful new game framework for developers, now powering Stake Originals and third-party titles.",
+    "cover": "/images/news/StakeEngineNowLive.png",
+    "contentHtml": "<p>Stake has officially announced the launch of the <strong>Stake Engine</strong> — a cutting-edge Remote Gaming Server (RGS) designed to power both Stake's Originals and new third-party games. This platform offers developers the same high-performance framework that drives Stake's most popular titles, opening the door to unprecedented creative and technical possibilities.</p><p>With a strong focus on <strong>fairness, scalability, and seamless integration</strong>, Stake Engine gives studios the ability to build, test, and publish games directly to Stake's massive global audience. Developers can leverage its advanced tools, secure infrastructure, and real-time data systems to create engaging experiences that meet Stake's exacting standards.</p><p>Stake Engine also introduces streamlined compliance processes and cross-platform optimization — ensuring games run flawlessly across desktop, mobile, and tablet devices.</p><p>This announcement marks a major step forward in Stake's commitment to fostering innovative, high-quality gaming experiences for players worldwide.</p>"
+  },
+  {
     "slug": "zeroedge-studios-stake-engine-access",
     "title": "ZeroEdge Studios Secures Stake Engine Access",
     "date": "2025-08-01",
