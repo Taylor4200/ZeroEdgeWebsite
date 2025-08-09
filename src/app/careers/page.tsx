@@ -10,45 +10,49 @@ import { z } from 'zod'
 
 const jobOpenings = [
   {
-    id: 'game-mathematician',
-    title: 'Game Mathematician',
-    department: 'Mathematics',
-    type: 'Full-time',
+    id: 'spine-artist-animator',
+    title: 'Spine Artist & 2D Animator',
+    department: 'Art',
+    type: 'Contract or Full-time',
     location: 'Remote',
-    description: 'Join our team to design and implement game mathematics for our slot games. You\'ll work on RTP calculations, volatility modeling, and feature design.',
+    description:
+      "Own the visual identity of our slots. You'll create production-ready characters, symbols, VFX, and Spine timelines that feel premium on both desktop and mobile.",
+    responsibilities: [
+      'Design symbols, characters, UI elements, and backgrounds for slot games',
+      'Build clean Spine rigs (meshes, weights, constraints) and author performant animations',
+      'Export optimized atlases and JSON for web delivery (multi-res, texture packing)',
+      'Collaborate with devs to integrate/preview Spine in PixiJS and tune timing/easing',
+      'Maintain a consistent visual style across base game and bonus features'
+    ],
     requirements: [
-      'Strong mathematical background (Statistics, Probability, or related field)',
-      'Experience with game mathematics and RTP calculations',
-      'Proficiency in Python, R, or similar statistical programming languages',
-      'Understanding of gaming regulations and compliance requirements'
+      'Strong portfolio showing 2D game art and Spine animation (send links)',
+      'Expertise in Spine 2D (meshing, IK, paths, skins) and Photoshop/Illustrator',
+      'Understands performance budgets: draw calls, atlas sizing, overdraw',
+      'Comfort delivering layered source files and tidy export pipelines',
+      'Bonus: Experience with particle/VFX, After Effects, or shader-based effects'
     ]
   },
   {
-    id: 'frontend-developer',
-    title: 'Frontend Developer',
+    id: 'frontend-slot-developer',
+    title: 'Frontend Slot Developer (Svelte + PixiJS)',
     department: 'Engineering',
     type: 'Full-time',
     location: 'Remote',
-    description: 'Help us build the next generation of slot games using modern web technologies. You\'ll work on game engines, UI components, and performance optimization.',
+    description:
+      'Ship smooth, responsive slot games. You’ll build game UIs, integrate math, wire features, and push perf using Svelte + PixiJS (and our Stake Engine stack).',
+    responsibilities: [
+      'Implement game flows, reels, states, paytable/feature UIs in Svelte',
+      'Integrate PixiJS rendering, Spine animations, and asset loaders',
+      'Hook up math outcomes, event buses, and session handling to the web SDK',
+      'Optimize for 60fps on mid-tier phones (texture atlases, pooling, GC control)',
+      'Write clean, typed code and reusable components; add unit/integration tests'
+    ],
     requirements: [
-      'Strong experience with JavaScript/TypeScript and modern frameworks',
-      'Experience with Canvas, WebGL, or game development',
-      'Knowledge of performance optimization and mobile development',
-      'Understanding of gaming industry standards and best practices'
-    ]
-  },
-  {
-    id: 'technical-artist',
-    title: 'Technical Artist',
-    department: 'Art',
-    type: 'Full-time',
-    location: 'Remote',
-    description: 'Bridge the gap between art and technology. You\'ll work on visual effects, animations, and technical implementation of game assets.',
-    requirements: [
-      'Experience with 2D/3D animation and visual effects',
-      'Knowledge of game engines and real-time rendering',
-      'Proficiency in tools like After Effects, Blender, or similar',
-      'Understanding of performance constraints in game development'
+      'Strong Svelte/SvelteKit and TypeScript skills',
+      'Hands-on PixiJS experience (containers, spritesheets, filters, Spine runtime)',
+      'Understands game loops, timing, easing, and deterministic state',
+      'Web perf chops: memory profiling, asset strategies, input latency',
+      'Bonus: Experience with Stake Engine/Web SDKs, slot mechanics, or canvas/WebGL'
     ]
   }
 ]
@@ -57,6 +61,7 @@ const applicationSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Invalid email address'),
   position: z.string().min(1, 'Please select a position'),
+  portfolio: z.string().url('Invalid portfolio URL').optional().or(z.literal('')),
   linkedin: z.string().url('Invalid LinkedIn URL').optional().or(z.literal('')),
   github: z.string().url('Invalid GitHub URL').optional().or(z.literal('')),
   message: z.string().min(10, 'Message must be at least 10 characters'),
@@ -70,6 +75,19 @@ export default function CareersPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [errors, setErrors] = useState<Record<string, string>>({})
 
+  const handleApplyClick = (positionId: string) => {
+    setSelectedPosition(positionId)
+    
+    // Smooth scroll to application form
+    const applicationForm = document.getElementById('application-form')
+    if (applicationForm) {
+      applicationForm.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+  }
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
@@ -80,6 +98,7 @@ export default function CareersPage() {
       name: formData.get('name') as string,
       email: formData.get('email') as string,
       position: formData.get('position') as string,
+      portfolio: formData.get('portfolio') as string,
       linkedin: formData.get('linkedin') as string,
       github: formData.get('github') as string,
       message: formData.get('message') as string,
@@ -89,7 +108,7 @@ export default function CareersPage() {
     try {
       const validatedData = applicationSchema.parse(data)
       console.log('Application submitted:', validatedData)
-      // TODO: Send to actual API
+      // TODO: Send to your API / webhook
       alert('Application submitted successfully!')
       e.currentTarget.reset()
       setSelectedPosition('')
@@ -98,7 +117,7 @@ export default function CareersPage() {
         const newErrors: Record<string, string> = {}
         error.errors.forEach((err) => {
           if (err.path) {
-            newErrors[err.path[0]] = err.message
+            newErrors[String(err.path[0])] = err.message
           }
         })
         setErrors(newErrors)
@@ -119,10 +138,12 @@ export default function CareersPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[color:var(--text)]">Join Our Team</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[color:var(--text)]">
+            Join ZeroEdge Studios
+          </h1>
           <p className="text-xl text-[color:var(--muted)] max-w-2xl mx-auto">
-            Help us create the next generation of slot games. We're looking for talented 
-            individuals who are passionate about gaming and innovation.
+            We build fast, clean, high-impact slot games for Stake. If you’re elite at your craft and
+            care about polish, you’ll fit here.
           </p>
         </motion.div>
 
@@ -136,9 +157,7 @@ export default function CareersPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Open Positions</h2>
-            <p className="text-white/60">
-              Explore our current openings and find your perfect role
-            </p>
+            <p className="text-white/60">Two roles. High bar. Clear impact.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -161,11 +180,27 @@ export default function CareersPage() {
                       </div>
                     </div>
                   </div>
+
                   <p className="text-white/60 mb-4">{job.description}</p>
+
+                  {'responsibilities' in job && (
+                    <div className="mb-4">
+                      <h4 className="font-semibold mb-2">What you’ll do:</h4>
+                      <ul className="text-white/60 text-sm space-y-1">
+                        {(job as any).responsibilities.map((item: string, i: number) => (
+                          <li key={i} className="flex items-start">
+                            <span className="text-neon-purple mr-2">•</span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
                   <div className="mb-4">
                     <h4 className="font-semibold mb-2">Requirements:</h4>
                     <ul className="text-white/60 text-sm space-y-1">
-                      {job.requirements.map((req, i) => (
+                      {job.requirements.map((req: string, i: number) => (
                         <li key={i} className="flex items-start">
                           <span className="text-neon-purple mr-2">•</span>
                           {req}
@@ -173,10 +208,8 @@ export default function CareersPage() {
                       ))}
                     </ul>
                   </div>
-                  <Button
-                    onClick={() => setSelectedPosition(job.id)}
-                    className="w-full"
-                  >
+
+                  <Button onClick={() => handleApplyClick(job.id)} className="w-full">
                     Apply for this position
                   </Button>
                 </Card>
@@ -186,7 +219,7 @@ export default function CareersPage() {
         </section>
 
         {/* Application Form */}
-        <section>
+        <section id="application-form">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -208,11 +241,9 @@ export default function CareersPage() {
                       id="name"
                       name="name"
                       required
-                      className="w-full px-4 py-2 bg-background-secondary border border-border rounded-lg text-white focus:ring-2 focus:ring-neon-purple focus:border-transparent"
+                      className="w-full px-4 py-2 bg-[color:var(--bg)] border border-[color:var(--muted)]/20 rounded-lg text-[color:var(--text)] focus:ring-2 focus:ring-[color:var(--primary)] focus:border-transparent"
                     />
-                    {errors.name && (
-                      <p className="text-red-400 text-sm mt-1">{errors.name}</p>
-                    )}
+                    {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name}</p>}
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium mb-2">
@@ -223,11 +254,9 @@ export default function CareersPage() {
                       id="email"
                       name="email"
                       required
-                      className="w-full px-4 py-2 bg-background-secondary border border-border rounded-lg text-white focus:ring-2 focus:ring-neon-purple focus:border-transparent"
+                      className="w-full px-4 py-2 bg-[color:var(--bg)] border border-[color:var(--muted)]/20 rounded-lg text-[color:var(--text)] focus:ring-2 focus:ring-[color:var(--primary)] focus:border-transparent"
                     />
-                    {errors.email && (
-                      <p className="text-red-400 text-sm mt-1">{errors.email}</p>
-                    )}
+                    {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
                   </div>
                 </div>
 
@@ -241,7 +270,7 @@ export default function CareersPage() {
                     required
                     value={selectedPosition}
                     onChange={(e) => setSelectedPosition(e.target.value)}
-                    className="w-full px-4 py-2 bg-background-secondary border border-border rounded-lg text-white focus:ring-2 focus:ring-neon-purple focus:border-transparent"
+                    className="w-full px-4 py-2 bg-[color:var(--bg)] border border-[color:var(--muted)]/20 rounded-lg text-[color:var(--text)] focus:ring-2 focus:ring-[color:var(--primary)] focus:border-transparent"
                   >
                     <option value="">Select a position</option>
                     {jobOpenings.map((job) => (
@@ -250,41 +279,48 @@ export default function CareersPage() {
                       </option>
                     ))}
                   </select>
-                  {errors.position && (
-                    <p className="text-red-400 text-sm mt-1">{errors.position}</p>
-                  )}
+                  {errors.position && <p className="text-red-400 text-sm mt-1">{errors.position}</p>}
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="md:col-span-1">
+                    <label htmlFor="portfolio" className="block text-sm font-medium mb-2">
+                      Portfolio
+                    </label>
+                    <input
+                      type="url"
+                      id="portfolio"
+                      name="portfolio"
+                      placeholder="https://your-portfolio.com"
+                      className="w-full px-4 py-2 bg-[color:var(--bg)] border border-[color:var(--muted)]/20 rounded-lg text-[color:var(--text)] focus:ring-2 focus:ring-[color:var(--primary)] focus:border-transparent"
+                    />
+                    {errors.portfolio && <p className="text-red-400 text-sm mt-1">{errors.portfolio}</p>}
+                  </div>
                   <div>
                     <label htmlFor="linkedin" className="block text-sm font-medium mb-2">
-                      LinkedIn Profile
+                      LinkedIn
                     </label>
                     <input
                       type="url"
                       id="linkedin"
                       name="linkedin"
                       placeholder="https://linkedin.com/in/yourprofile"
-                      className="w-full px-4 py-2 bg-background-secondary border border-border rounded-lg text-white focus:ring-2 focus:ring-neon-purple focus:border-transparent"
+                      className="w-full px-4 py-2 bg-[color:var(--bg)] border border-[color:var(--muted)]/20 rounded-lg text-[color:var(--text)] focus:ring-2 focus:ring-[color:var(--primary)] focus:border-transparent"
                     />
-                    {errors.linkedin && (
-                      <p className="text-red-400 text-sm mt-1">{errors.linkedin}</p>
-                    )}
+                    {errors.linkedin && <p className="text-red-400 text-sm mt-1">{errors.linkedin}</p>}
                   </div>
                   <div>
                     <label htmlFor="github" className="block text-sm font-medium mb-2">
-                      GitHub Profile
+                      GitHub
                     </label>
                     <input
                       type="url"
                       id="github"
                       name="github"
                       placeholder="https://github.com/yourusername"
-                      className="w-full px-4 py-2 bg-background-secondary border border-border rounded-lg text-white focus:ring-2 focus:ring-neon-purple focus:border-transparent"
+                      className="w-full px-4 py-2 bg-[color:var(--bg)] border border-[color:var(--muted)]/20 rounded-lg text-[color:var(--text)] focus:ring-2 focus:ring-[color:var(--primary)] focus:border-transparent"
                     />
-                    {errors.github && (
-                      <p className="text-red-400 text-sm mt-1">{errors.github}</p>
-                    )}
+                    {errors.github && <p className="text-red-400 text-sm mt-1">{errors.github}</p>}
                   </div>
                 </div>
 
@@ -297,12 +333,10 @@ export default function CareersPage() {
                     name="message"
                     required
                     rows={6}
-                    placeholder="Tell us why you'd be a great fit for this position..."
-                    className="w-full px-4 py-2 bg-background-secondary border border-border rounded-lg text-white focus:ring-2 focus:ring-neon-purple focus:border-transparent resize-vertical"
+                    placeholder="Tell us why you’re a fit. Include links to your best work and what you shipped most recently."
+                    className="w-full px-4 py-2 bg-[color:var(--bg)] border border-[color:var(--muted)]/20 rounded-lg text-[color:var(--text)] focus:ring-2 focus:ring-[color:var(--primary)] focus:border-transparent resize-vertical"
                   />
-                  {errors.message && (
-                    <p className="text-red-400 text-sm mt-1">{errors.message}</p>
-                  )}
+                  {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message}</p>}
                 </div>
 
                 {/* Honeypot */}
@@ -314,11 +348,7 @@ export default function CareersPage() {
                   autoComplete="off"
                 />
 
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full"
-                >
+                <Button type="submit" disabled={isSubmitting} className="w-full">
                   {isSubmitting ? 'Submitting...' : 'Submit Application'}
                 </Button>
               </form>

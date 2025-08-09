@@ -93,7 +93,7 @@ export default function ContactPage() {
                       id="name"
                       name="name"
                       required
-                      className="w-full px-4 py-2 bg-background-secondary border border-border rounded-lg text-white focus:ring-2 focus:ring-neon-purple focus:border-transparent"
+                      className="w-full px-4 py-2 bg-[color:var(--bg)] border border-[color:var(--muted)]/20 rounded-lg text-[color:var(--text)] focus:ring-2 focus:ring-[color:var(--primary)] focus:border-transparent"
                     />
                     {errors.name && (
                       <p className="text-red-400 text-sm mt-1">{errors.name}</p>
@@ -108,7 +108,7 @@ export default function ContactPage() {
                       id="email"
                       name="email"
                       required
-                      className="w-full px-4 py-2 bg-background-secondary border border-border rounded-lg text-white focus:ring-2 focus:ring-neon-purple focus:border-transparent"
+                      className="w-full px-4 py-2 bg-[color:var(--bg)] border border-[color:var(--muted)]/20 rounded-lg text-[color:var(--text)] focus:ring-2 focus:ring-[color:var(--primary)] focus:border-transparent"
                     />
                     {errors.email && (
                       <p className="text-red-400 text-sm mt-1">{errors.email}</p>
@@ -125,7 +125,7 @@ export default function ContactPage() {
                     id="company"
                     name="company"
                     required
-                    className="w-full px-4 py-2 bg-background-secondary border border-border rounded-lg text-white focus:ring-2 focus:ring-neon-purple focus:border-transparent"
+                    className="w-full px-4 py-2 bg-[color:var(--bg)] border border-[color:var(--muted)]/20 rounded-lg text-[color:var(--text)] focus:ring-2 focus:ring-[color:var(--primary)] focus:border-transparent"
                   />
                   {errors.company && (
                     <p className="text-red-400 text-sm mt-1">{errors.company}</p>
@@ -142,7 +142,7 @@ export default function ContactPage() {
                     required
                     rows={6}
                     placeholder="Tell us about your partnership interest..."
-                    className="w-full px-4 py-2 bg-background-secondary border border-border rounded-lg text-white focus:ring-2 focus:ring-neon-purple focus:border-transparent resize-vertical"
+                    className="w-full px-4 py-2 bg-[color:var(--bg)] border border-[color:var(--muted)]/20 rounded-lg text-[color:var(--text)] focus:ring-2 focus:ring-[color:var(--primary)] focus:border-transparent resize-vertical"
                   />
                   {errors.message && (
                     <p className="text-red-400 text-sm mt-1">{errors.message}</p>
