@@ -29,7 +29,7 @@ export default function HomePage() {
           >
             <TitleReel className="text-[clamp(42px,8vw,104px)] font-extrabold text-[color:var(--text)]" />
             <p className="mt-4 text-[color:var(--muted)] text-xl md:text-2xl max-w-2xl mx-auto">
-              Where Slots Meet Innovation
+              Creating exclusive games for the Stake ecosystem
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
               <Button asChild size="lg">
@@ -55,7 +55,7 @@ export default function HomePage() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[color:var(--text)]">Featured Games</h2>
             <p className="text-[color:var(--muted)] max-w-2xl mx-auto">
-              Experience our latest slot games with stunning visuals and innovative mechanics
+              Exclusive slot games built on Stake Engine, designed for the Stake ecosystem
             </p>
           </motion.div>
           
@@ -87,26 +87,26 @@ export default function HomePage() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[color:var(--text)]">Our Pillars</h2>
             <p className="text-[color:var(--muted)] max-w-2xl mx-auto">
-              The foundation of our success in creating exceptional gaming experiences
+              The foundation of our success as a Stake-exclusive game studio
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: 'Math-Driven RTP',
-                description: 'Our games feature carefully calculated RTP ranges ensuring fair and transparent gameplay for all players.',
+                title: 'Stake Engine Powered',
+                description: 'Built on Stake\'s official RGS platform, ensuring seamless integration and optimal performance for the Stake ecosystem.',
+                icon: '⚡'
+              },
+              {
+                title: 'Stake-Exclusive Publishing',
+                description: 'All our games are developed exclusively for Stake, reaching their global audience of millions of players.',
                 icon: '🎯'
               },
               {
                 title: 'Original Art & Animation',
-                description: 'Every visual element is crafted in-house, creating unique and memorable gaming experiences.',
+                description: 'Every visual element is crafted in-house, creating unique and memorable gaming experiences for Stake players.',
                 icon: '🎨'
-              },
-              {
-                title: 'Stake Integration Ready',
-                description: 'Built with modern technology for seamless integration with leading gaming platforms.',
-                icon: '⚡'
               }
             ].map((pillar, index) => (
               <motion.div
@@ -137,9 +137,9 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[color:var(--text)]">Our Partners</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[color:var(--text)]">Our Partnership</h2>
             <p className="text-[color:var(--muted)] max-w-2xl mx-auto">
-              Trusted by leading gaming platforms worldwide
+              Proud to be a Stake-exclusive publisher, creating games for the world's leading crypto casino
             </p>
           </motion.div>
 
@@ -147,16 +147,56 @@ export default function HomePage() {
             {partners.map((partner, index) => (
               <motion.div
                 key={partner.name}
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.4, delay: index * 0.06 }}
                 viewport={{ once: true }}
-                className="flex justify-center"
+                className="flex justify-center group"
               >
-                <div className="bg-[color:var(--bg)] border border-[color:var(--muted)]/20 rounded-xl p-6 w-full max-w-48 h-24 flex items-center justify-center">
-                  <span className="text-[color:var(--muted)] font-semibold text-center">
-                    {partner.name}
-                  </span>
+                <div
+                  className="
+                    relative w-full max-w-48 h-24
+                    [perspective:1000px]
+                  "
+                >
+                  <div
+                    className="
+                      relative h-full w-full rounded-xl
+                      transition-transform duration-500 will-change-transform
+                      [transform-style:preserve-3d]
+                      group-hover:[transform:rotateY(180deg)]
+                      motion-reduce:transition-none motion-reduce:[transform:none]
+                    "
+                    aria-label={`${partner.name} card`}
+                  >
+                    {/* Front */}
+                    <div
+                      className="
+                        absolute inset-0 rounded-xl p-6
+                        flex items-center justify-center text-center
+                        bg-[color:var(--bg)] border border-[color:var(--muted)]/20
+                        [backface-visibility:hidden]
+                      "
+                    >
+                      <span className="text-[color:var(--muted)] font-semibold">
+                        {partner.name}
+                      </span>
+                    </div>
+
+                    {/* Back */}
+                    <div
+                      className="
+                        absolute inset-0 rounded-xl p-4
+                        flex items-center justify-center text-center
+                        bg-[color:var(--bg)] border border-[color:var(--primary)]/40
+                        [transform:rotateY(180deg)] [backface-visibility:hidden]
+                      "
+                    >
+                      <p className="text-[color:var(--muted)] text-xs leading-relaxed">
+                        {partner.description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -189,15 +229,22 @@ export default function HomePage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full bg-[color:var(--bg)] border border-[color:var(--muted)]/20">
+                <Card className="h-full group bg-[color:var(--bg)] border border-[color:var(--muted)]/20">
                   <div className="relative aspect-video overflow-hidden rounded-t-2xl">
+                    <Image
+                      src={post.cover}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                    />
                     <div className="absolute inset-0 bg-[color:var(--primary)]/10" />
                   </div>
                   <div className="p-6">
                     <div className="text-sm text-[color:var(--muted)]/60 mb-2">
                       {formatDate(post.date)}
                     </div>
-                    <h3 className="font-bold text-lg mb-2 text-[color:var(--text)]">{post.title}</h3>
+                    <h3 className="font-bold text-lg mb-2 group-hover:text-[color:var(--primary)] transition-colors text-[color:var(--text)]">{post.title}</h3>
                     <p className="text-[color:var(--muted)] text-sm mb-4">{post.excerpt}</p>
                     <Link
                       href={`/news/${post.slug}`}

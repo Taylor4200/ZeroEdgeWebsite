@@ -66,10 +66,9 @@ export default function ContactPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
-          <p className="text-xl text-white/60 max-w-2xl mx-auto">
-            Interested in partnering with us? We'd love to hear from you. 
-            Get in touch to discuss distribution opportunities and collaborations.
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">Contact Us</h1>
+          <p className="text-xl text-[color:var(--muted)] max-w-3xl mx-auto">
+            Interested in our Stake-exclusive games? Get in touch to learn more about our partnership opportunities.
           </p>
         </motion.div>
 

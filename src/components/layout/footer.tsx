@@ -11,12 +11,12 @@ export function Footer() {
             <div className="col-span-1 md:col-span-2">
               <Link href="/" className="inline-block">
                 <div className="text-2xl font-bold text-[color:var(--text)] mb-4">
-                  ZeroEdgeStudios
+                  ZeroEdge Studios
                 </div>
               </Link>
               <p className="text-[color:var(--muted)] max-w-md">
-                Where slots meet innovation. We create premium gaming experiences 
-                that push the boundaries of what's possible in slot gaming.
+                A Stake-exclusive game studio creating unique slot games built on Stake Engine 
+                for the world's leading crypto casino.
               </p>
             </div>
 
@@ -73,7 +73,7 @@ export function Footer() {
           {/* Bottom Bar */}
           <div className="border-t border-[color:var(--muted)]/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-[color:var(--muted)]/60 text-sm">
-              © 2025 ZeroEdgeStudios. All rights reserved.
+              © 2025 ZeroEdge Studios. All rights reserved.
             </p>
             <div className="flex items-center space-x-4 mt-4 md:mt-0">
               <div className="flex items-center gap-2 text-xs text-[color:var(--muted)]/60">

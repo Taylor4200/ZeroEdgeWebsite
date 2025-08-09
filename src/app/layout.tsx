@@ -9,26 +9,26 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
-    default: 'ZeroEdgeStudios - Where Slots Meet Innovation',
-    template: '%s | ZeroEdgeStudios'
+    default: 'ZeroEdge Studios - Stake-Exclusive Game Studio',
+    template: '%s | ZeroEdge Studios'
   },
-  description: 'Premium slot game studio creating innovative gaming experiences with stunning visuals and fair gameplay.',
-  keywords: ['slot games', 'gaming', 'casino', 'RTP', 'volatility', 'free spins'],
-  authors: [{ name: 'ZeroEdgeStudios' }],
-  creator: 'ZeroEdgeStudios',
+  description: 'Stake-exclusive game studio creating unique slot games built on Stake Engine for the world\'s leading crypto casino.',
+  keywords: ['stake engine', 'stake exclusive', 'slot games', 'crypto casino', 'game development', 'stake publisher'],
+  authors: [{ name: 'ZeroEdge Studios' }],
+  creator: 'ZeroEdge Studios',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://zeroedgestudios.com',
-    title: 'ZeroEdgeStudios - Where Slots Meet Innovation',
-    description: 'Premium slot game studio creating innovative gaming experiences.',
-    siteName: 'ZeroEdgeStudios',
+    title: 'ZeroEdge Studios - Stake-Exclusive Game Studio',
+    description: 'Stake-exclusive game studio creating unique slot games built on Stake Engine.',
+    siteName: 'ZeroEdge Studios',
   },
   metadataBase: new URL('http://localhost:3000'),
   twitter: {
     card: 'summary_large_image',
-    title: 'ZeroEdgeStudios - Where Slots Meet Innovation',
-    description: 'Premium slot game studio creating innovative gaming experiences.',
+    title: 'ZeroEdge Studios - Stake-Exclusive Game Studio',
+    description: 'Stake-exclusive game studio creating unique slot games built on Stake Engine.',
   },
   robots: {
     index: true,

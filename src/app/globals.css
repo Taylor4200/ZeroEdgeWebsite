@@ -7,7 +7,7 @@
     --bg: #0B0B0E; 
     --text: #EDEDED; 
     --muted: #A2A6B3; 
-    --primary: #9A5BFF; 
+    --primary: #00B4FF; 
     --accent: #FF4D5E; 
   }
   
@@ -66,3 +66,20 @@
 }
 
 .float-y { animation: float-y 6s ease-in-out infinite; }
+
+/* Custom 3D Flip Classes */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}

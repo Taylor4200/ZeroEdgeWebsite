@@ -30,6 +30,7 @@ export interface NewsPost {
 
 export interface Partner {
   name: string
+  description: string
   logo: string
   link: string
 }

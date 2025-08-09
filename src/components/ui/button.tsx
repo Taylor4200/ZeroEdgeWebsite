@@ -15,7 +15,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const baseStyles = 'inline-flex items-center justify-center rounded-xl font-medium transition-all duration-200 focus-ring disabled:opacity-50 disabled:pointer-events-none'
     
     const variants = {
-      primary: 'bg-[color:var(--primary)] text-white shadow-[0_0_0_0_rgba(154,91,255,0)] hover:shadow-[0_0_24px_0_rgba(154,91,255,.45)]',
+      primary: 'bg-[color:var(--primary)] text-white shadow-[0_0_0_0_rgba(0,180,255,0)] hover:shadow-[0_0_24px_0_rgba(0,180,255,.45)]',
       secondary: 'bg-[color:var(--bg)] text-[color:var(--text)] border border-[color:var(--muted)]/20 hover:bg-[color:var(--muted)]/10',
       outline: 'text-[color:var(--text)] border border-[color:var(--muted)]/20 hover:bg-[color:var(--muted)]/10',
       ghost: 'text-[color:var(--text)] hover:bg-[color:var(--muted)]/10'

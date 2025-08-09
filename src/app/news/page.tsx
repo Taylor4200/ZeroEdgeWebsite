@@ -1,6 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Container } from '@/components/ui/container'
 import { Card } from '@/components/ui/card'
 import { getNews } from '@/lib/data'
@@ -37,6 +38,13 @@ export default function NewsPage() {
               <Link href={`/news/${post.slug}`}>
                 <Card className="h-full group overflow-hidden bg-[color:var(--bg)] border border-[color:var(--muted)]/20">
                   <div className="relative aspect-[16/9] overflow-hidden">
+                    <Image
+                      src={post.cover}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
                     <div className="absolute inset-0 bg-[color:var(--primary)]/20 group-hover:scale-[1.03] transition-transform duration-300" />
                   </div>
                   <div className="p-6">

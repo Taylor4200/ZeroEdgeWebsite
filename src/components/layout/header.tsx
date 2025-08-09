@@ -51,7 +51,7 @@ export function Header() {
                 className="text-2xl font-bold text-[color:var(--text)]"
                 whileHover={{ scale: 1.05 }}
               >
-                ZeroEdgeStudios
+                ZeroEdge Studios
               </motion.div>
             </Link>
 

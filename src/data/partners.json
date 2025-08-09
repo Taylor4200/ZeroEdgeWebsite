@@ -1,22 +1,18 @@
 [
   {
-    "name": "Gaming Platform Alpha",
-    "logo": "/images/partners/alpha-logo.png",
-    "link": "https://gamingalpha.com"
+    "name": "Stake Engine Game Development",
+    "description": "Full-cycle game creation using Stake Engine’s powerful RGS platform, from concept to launch."
   },
   {
-    "name": "Slot Network Beta",
-    "logo": "/images/partners/beta-logo.png",
-    "link": "https://slotnetworkbeta.com"
+    "name": "Exclusive Slot Titles",
+    "description": "Unique, high-quality slot games built solely for Stake.com’s global player base."
   },
   {
-    "name": "Casino Solutions Gamma",
-    "logo": "/images/partners/gamma-logo.png",
-    "link": "https://casinosolutionsgamma.com"
+    "name": "Custom Casino Solutions",
+    "description": "Tailored mechanics, bonus systems, and features optimized for Stake’s platform."
   },
   {
-    "name": "Game Distribution Delta",
-    "logo": "/images/partners/delta-logo.png",
-    "link": "https://gamedistributiondelta.com"
+    "name": "Direct Stake Distribution",
+    "description": "Seamless publishing directly to Stake.com, ensuring immediate global reach."
   }
 ]

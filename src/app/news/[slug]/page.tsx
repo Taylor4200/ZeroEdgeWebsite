@@ -1,10 +1,11 @@
 'use client'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Container } from '@/components/ui/container'
 import { Card } from '@/components/ui/card'
-import { getNewsBySlug, getLatestNews } from '@/lib/data'
+import { getNews, getNewsBySlug, getLatestNews } from '@/lib/data'
 import { formatDate } from '@/lib/utils'
 
 interface NewsPageProps {
@@ -38,6 +39,17 @@ export default function NewsPage({ params }: NewsPageProps) {
             <p className="text-xl text-[color:var(--muted)] max-w-2xl mx-auto">
               {post.excerpt}
             </p>
+          </div>
+          
+          {/* Cover Image */}
+          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl mb-8">
+            <Image
+              src={post.cover}
+              alt={post.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 800px"
+            />
           </div>
         </motion.div>
 
@@ -84,6 +96,13 @@ export default function NewsPage({ params }: NewsPageProps) {
                   <Link href={`/news/${relatedPost.slug}`}>
                     <Card className="h-full group bg-[color:var(--bg)] border border-[color:var(--muted)]/20">
                       <div className="relative aspect-video overflow-hidden rounded-t-2xl">
+                        <Image
+                          src={relatedPost.cover}
+                          alt={relatedPost.title}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 300px"
+                        />
                         <div className="absolute inset-0 bg-[color:var(--primary)]/20" />
                       </div>
                       <div className="p-4">

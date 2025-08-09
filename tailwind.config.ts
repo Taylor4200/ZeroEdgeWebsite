@@ -13,7 +13,7 @@ const config: Config = {
           DEFAULT: '#0B0B0E',
         },
         neon: {
-          purple: '#9A5BFF',
+          purple: '#00B4FF',
           red: '#FF4D5E',
         },
       },
@@ -21,21 +21,20 @@ const config: Config = {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        'hero': ['4rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
-        'display': ['3rem', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
+        '2xs': ['0.625rem', { lineHeight: '0.75rem' }],
       },
       animation: {
+        'float-y': 'float-y 6s ease-in-out infinite',
         'glow': 'glow 2s ease-in-out infinite alternate',
-        'float': 'float 6s ease-in-out infinite',
       },
       keyframes: {
-        glow: {
-          '0%': { boxShadow: '0 0 20px rgba(154, 91, 255, 0.3)' },
-          '100%': { boxShadow: '0 0 30px rgba(154, 91, 255, 0.6)' },
-        },
-        float: {
+        'float-y': {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        'glow': {
+          '0%': { filter: 'drop-shadow(0 0 5px #00B4FF)' },
+          '100%': { filter: 'drop-shadow(0 0 20px #00B4FF)' },
         },
       },
     },
