@@ -5,24 +5,24 @@ import { Card } from '@/components/ui/card'
 
 const milestones = [
   {
-    year: '2025',
-    title: 'Stake Engine Access',
-    description: 'Secured official access to Stake Engine, becoming a Stake-exclusive publisher.'
+    date: 'April 28, 2025',
+    title: 'Stake Engine Launch',
+    description: 'Stake officially announces Stake Engine — a powerful new game framework for developers.'
   },
   {
-    year: '2025',
+    date: 'August 1, 2025',
+    title: 'Stake Engine Access',
+    description: 'ZeroEdge Studios secures official access to Stake Engine, becoming a Stake-exclusive publisher.'
+  },
+  {
+    date: 'August 2, 2025',
     title: 'Studio Launch',
     description: 'ZeroEdge Studios officially launches as a Stake-exclusive game studio.'
   },
   {
-    year: '2025',
-    title: 'First Stake Game',
-    description: 'Developing our first exclusive slot game for the Stake platform.'
-  },
-  {
-    year: '2025',
-    title: 'Global Reach',
-    description: 'Reaching Stake\'s global audience of millions of crypto casino players.'
+    date: 'August 2025',
+    title: 'First Game Development',
+    description: 'Development begins on our first exclusive slot game for the Stake platform.'
   }
 ]
 
@@ -104,9 +104,12 @@ export default function AboutPage() {
                   <Card className="p-6 bg-[color:var(--bg)] border border-[color:var(--muted)]/20">
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center bg-[color:var(--primary)]/20">
-                        <span className="text-[color:var(--primary)] font-bold text-sm">{milestone.year}</span>
+                        <span className="text-[color:var(--primary)] font-bold text-xs"></span>
                       </div>
                       <div>
+                        <div className="flex items-center space-x-2 mb-1">
+                          <span className="text-[color:var(--primary)] font-semibold text-sm">{milestone.date}</span>
+                        </div>
                         <h3 className="text-xl font-bold mb-1 text-[color:var(--text)]">{milestone.title}</h3>
                         <p className="text-[color:var(--muted)] leading-snug">{milestone.description}</p>
                       </div>
