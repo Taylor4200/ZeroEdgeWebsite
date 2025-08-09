@@ -83,7 +83,7 @@ export default function CareersPage() {
     if (applicationForm) {
       applicationForm.scrollIntoView({ 
         behavior: 'smooth',
-        block: 'start'
+        block: 'center'
       })
     }
   }
