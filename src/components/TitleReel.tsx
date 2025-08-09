@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { LayoutGroup, motion, useReducedMotion } from 'framer-motion';
 
-const FINAL_TEXT = 'ZeroEdgeStudios';
+const FINAL_TEXT = 'ZeroEdge Studios';
 
 type Src = { id: string; ch: string };
 type Pick = { srcId: string; from: string; isGhost: boolean };
