@@ -52,6 +52,16 @@ export default function AgeGate() {
     document.body.style.overflow = ''
   }
 
+  const exit = () => {
+    // Check if there's a previous page in history
+    if (window.history.length > 1) {
+      window.history.back()
+    } else {
+      // If no previous page, redirect to a safe external site
+      window.location.href = 'https://www.google.com'
+    }
+  }
+
   if (!show) return null
 
   return (
@@ -85,15 +95,15 @@ export default function AgeGate() {
           >
             I'm {requiredAge}+ — Enter
           </button>
-          <Link
-            href="/about"
-            className="flex-1 rounded-xl px-4 py-3 text-center font-semibold
+          <button
+            onClick={exit}
+            className="flex-1 rounded-xl px-4 py-3 font-semibold
                        border bg-transparent
                        border-[color:var(--muted)]/30 text-[color:var(--text)]
                        hover:border-[color:var(--primary)]/50"
           >
-            Learn More
-          </Link>
+            I'm under {requiredAge}, exit
+          </button>
         </div>
 
         <p className="mt-4 text-center text-xs text-[color:var(--muted)]/70">
