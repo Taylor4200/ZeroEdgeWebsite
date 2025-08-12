@@ -59,11 +59,37 @@
   .fan-card {
     transform: translateX(calc(var(--distance) * 20px)) translateY(calc(abs(var(--distance)) * 5px)) rotateY(calc(var(--rotation) * 0.6deg)) !important;
   }
+  
+  /* Mobile fan effect adjustments */
+  .fan-container {
+    min-height: 200px !important;
+  }
+  
+  .fan-container .absolute {
+    transform: translate(-50%, -50%) translateX(calc(var(--distance) * 80px)) translateY(calc(abs(var(--distance)) * 15px)) rotateZ(calc(var(--rotation) * 0.8deg)) !important;
+  }
+  
+  .fan-container .w-56 {
+    width: 14rem !important;
+  }
 }
 
 @media (max-width: 480px) {
   .fan-card {
     transform: translateX(calc(var(--distance) * 15px)) translateY(calc(abs(var(--distance)) * 3px)) rotateY(calc(var(--rotation) * 0.4deg)) !important;
+  }
+  
+  /* Small mobile fan effect adjustments */
+  .fan-container {
+    min-height: 180px !important;
+  }
+  
+  .fan-container .absolute {
+    transform: translate(-50%, -50%) translateX(calc(var(--distance) * 60px)) translateY(calc(abs(var(--distance)) * 10px)) rotateZ(calc(var(--rotation) * 0.6deg)) !important;
+  }
+  
+  .fan-container .w-56 {
+    width: 12rem !important;
   }
 }
 
@@ -99,4 +125,20 @@
 
 .rotate-y-180 {
   transform: rotateY(180deg);
+}
+
+/* Mobile Carousel Utilities */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+/* Smooth scrolling for carousel */
+.overflow-x-auto {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }

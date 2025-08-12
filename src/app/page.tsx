@@ -85,19 +85,41 @@ export default function HomePage() {
             </motion.div>
             
             {/* Fanned-Out Cards Container */}
-            <div className="relative flex justify-center items-center min-h-[300px] md:min-h-[400px]">
-              {/* Working Fan Effect - Positioned Cards */}
-              <div className="relative w-full h-[300px] flex justify-center items-center">
+            <div className="relative flex justify-center items-center min-h-[200px] md:min-h-[400px] fan-container">
+              {/* Mobile Carousel - Hidden on desktop */}
+              <div className="block md:hidden w-full">
+                <div className="flex overflow-x-auto gap-4 pb-4 scrollbar-hide px-4">
+                  {featuredGames.map((game, index) => (
+                    <motion.div
+                      key={`mobile-${game.slug}`}
+                      initial={{ opacity: 0, x: 50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ 
+                        duration: 0.6, 
+                        delay: index * 0.1,
+                        ease: [0.25, 0.1, 0.25, 1]
+                      }}
+                      viewport={{ once: true }}
+                      className="flex-shrink-0 w-64 first:ml-0 last:mr-4"
+                    >
+                      <GameCard game={game} index={index} />
+                    </motion.div>
+                  ))}
+                </div>
+                {/* Scroll indicator */}
+                <div className="text-center mt-4">
+                  <p className="text-slate-400 text-sm">← Scroll to see more games →</p>
+                </div>
+              </div>
+              
+              {/* Desktop Fan Effect - Hidden on mobile */}
+              <div className="hidden md:block relative w-full h-[300px] flex justify-center items-center">
                 {featuredGames.map((game, index) => {
                   const totalCards = featuredGames.length;
                   const centerIndex = Math.floor(totalCards / 2);
                   const distanceFromCenter = index - centerIndex;
                   const maxRotation = 5; // Rotation around central point (like a fan)
                   const rotation = distanceFromCenter * (maxRotation / Math.max(centerIndex, 1));
-                  const translateX = distanceFromCenter * 270; // Much larger horizontal spread
-                  const translateY = Math.abs(distanceFromCenter) * 40; // Much larger vertical offset
-                  
-                  console.log(`Card ${index}: distance=${distanceFromCenter}, rotation=${rotation}, translateX=${translateX}, translateY=${translateY}`);
                   
                   return (
                     <div
@@ -106,7 +128,7 @@ export default function HomePage() {
                       style={{
                         left: '50%',
                         top: '50%',
-                        transform: `translate(-50%, -50%) translateX(${translateX}px) translateY(${translateY}px) rotateZ(${rotation}deg)`,
+                        transform: `translate(-50%, -50%) translateX(${distanceFromCenter * 270}px) translateY(${Math.abs(distanceFromCenter) * 40}px) rotateZ(${rotation}deg)`,
                         zIndex: totalCards - Math.abs(distanceFromCenter),
                       }}
                     >

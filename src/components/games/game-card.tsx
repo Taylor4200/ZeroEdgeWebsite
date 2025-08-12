@@ -22,8 +22,6 @@ interface GameCardProps {
 export function GameCard({ game, index }: GameCardProps) {
   const isLive = game.status === 'live'
   
-  console.log('Rendering GameCard:', game.title, 'index:', index)
-  
   return (
     <div className="group perspective-1000">
       <div className="relative w-full h-full transform-style-preserve-3d transition-all duration-500 group-hover:scale-105 group-hover:rotate-y-12">
@@ -43,16 +41,16 @@ export function GameCard({ game, index }: GameCardProps) {
           </div>
 
           {/* RTP Badge */}
-          <div className="absolute top-4 left-4 z-10">
-            <Badge className="bg-emerald-500/90 text-white font-bold text-xs px-3 py-1 rounded-full border-0 shadow-lg">
+          <div className="absolute top-2 left-2 md:top-4 md:left-4 z-10">
+            <Badge className="bg-emerald-500/90 text-white font-bold text-[10px] md:text-xs px-2 md:px-3 py-1 rounded-full border-0 shadow-lg">
               95.4% RTP
             </Badge>
           </div>
 
           {/* Status Badge */}
-          <div className="absolute top-4 right-4 z-10">
+          <div className="absolute top-2 right-2 md:top-4 md:right-4 z-10">
             <Badge 
-              className={`font-semibold text-xs px-3 py-1 rounded-full shadow-lg ${
+              className={`font-semibold text-[10px] md:text-xs px-2 md:px-3 py-1 rounded-full shadow-lg ${
                 isLive 
                   ? 'bg-green-500/90 text-white' 
                   : 'bg-orange-500/90 text-white'
@@ -63,29 +61,29 @@ export function GameCard({ game, index }: GameCardProps) {
           </div>
 
           {/* Content */}
-          <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+          <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6 text-white">
             {/* Title */}
-            <h3 className="text-xl font-bold mb-2 group-hover:text-emerald-400 transition-colors duration-300">
+            <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2 group-hover:text-emerald-400 transition-colors duration-300 leading-tight">
               {game.title}
             </h3>
             
             {/* Tagline */}
-            <p className="text-sm text-slate-300 mb-4 leading-relaxed">
+            <p className="text-xs md:text-sm text-slate-300 mb-2 md:mb-4 leading-relaxed line-clamp-2">
               {game.tagline}
             </p>
 
             {/* Game Stats */}
-            <div className="flex flex-wrap gap-2 mb-4">
-              <Badge className="bg-black/40 border border-slate-600 text-slate-300 text-xs">
+            <div className="flex flex-wrap gap-1 md:gap-2 mb-2 md:mb-4">
+              <Badge className="bg-black/40 border border-slate-600 text-slate-300 text-[10px] md:text-xs px-2 py-1">
                 {game.max_win}
               </Badge>
-              <Badge className="bg-black/40 border border-slate-600 text-slate-300 text-xs">
+              <Badge className="bg-black/40 border border-slate-600 text-slate-300 text-[10px] md:text-xs px-2 py-1">
                 {game.volatility}
               </Badge>
             </div>
 
             {/* Brand */}
-            <div className="text-xs text-slate-400 font-medium">
+            <div className="text-[10px] md:text-xs text-slate-400 font-medium">
               ZeroEdge Studios
             </div>
           </div>
