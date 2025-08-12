@@ -54,6 +54,19 @@
   }
 }
 
+/* Responsive Fan Effect */
+@media (max-width: 768px) {
+  .fan-card {
+    transform: translateX(calc(var(--distance) * 20px)) translateY(calc(abs(var(--distance)) * 5px)) rotateY(calc(var(--rotation) * 0.6deg)) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .fan-card {
+    transform: translateX(calc(var(--distance) * 15px)) translateY(calc(abs(var(--distance)) * 3px)) rotateY(calc(var(--rotation) * 0.4deg)) !important;
+  }
+}
+
 /* Motion helpers */
 @keyframes float-y {
   0%,100% { transform: translateY(0); }
