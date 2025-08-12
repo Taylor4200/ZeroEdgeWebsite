@@ -45,7 +45,7 @@ export function GameCard({ game, index }: GameCardProps) {
           {/* RTP Badge */}
           <div className="absolute top-4 left-4 z-10">
             <Badge className="bg-emerald-500/90 text-white font-bold text-xs px-3 py-1 rounded-full border-0 shadow-lg">
-              99.9% RTP
+              95.4% RTP
             </Badge>
           </div>
 

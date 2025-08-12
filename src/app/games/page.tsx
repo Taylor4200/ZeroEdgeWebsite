@@ -94,7 +94,7 @@ export default function GamesPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <GameCard game={game} />
+                <GameCard game={game} index={index} />
               </motion.div>
             ))}
           </motion.div>
