@@ -439,7 +439,6 @@ export default function NewsManagement() {
                       content={formData.content}
                       onChange={(content) => setFormData({...formData, content})}
                       placeholder="Write your article content here..."
-                      className="min-h-[500px]"
                     />
                   </div>
                   
