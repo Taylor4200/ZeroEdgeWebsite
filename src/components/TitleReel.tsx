@@ -37,6 +37,20 @@ export default function TitleReel({
   fadeSpeed?: number;
 }) {
   const reduced = useReducedMotion();
+  
+  // Check if device is mobile
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // 768px is typical mobile breakpoint
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   type Phase = 'waiting' | 'tagline' | 'explode' | 'hover' | 'recall' | 'done';
   const [phase, setPhase] = useState<Phase>('waiting');
@@ -194,7 +208,7 @@ export default function TitleReel({
   const fadeProgress = Math.min(1, Math.max(0, (recallIndex + 1) / FINAL_TEXT.length));
 
   // Early return after all hooks are called
-  if (reduced || hasPlayedRef.current || phase === 'waiting') {
+  if (reduced || hasPlayedRef.current || phase === 'waiting' || isMobile) {
     return (
       <div className={`flex justify-center text-[clamp(36px,8vw,104px)] font-extrabold leading-none text-white ${className}`} aria-label={FINAL_TEXT}>
         <span style={{ filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.25))' }}>
