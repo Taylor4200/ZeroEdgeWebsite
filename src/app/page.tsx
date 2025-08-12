@@ -18,24 +18,41 @@ export default function HomePage() {
   const prefersReducedMotion = useReducedMotion()
 
   return (
-    <div className="min-h-screen noise scanlines">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/Background.png"
+            alt="ZeroEdge Studios background illustration"
+            fill
+            className="object-cover object-center"
+            priority
+            sizes="100vw"
+          />
+          {/* Enhanced overlay for better text readability and visual appeal */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+          {/* Subtle vignette effect */}
+          <div className="absolute inset-0 bg-radial-gradient from-transparent via-transparent to-black/30" />
+        </div>
+        
         <Container className="relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="backdrop-blur-sm bg-black/20 rounded-3xl p-8 border border-white/10"
           >
-            <TitleReel className="text-[clamp(42px,8vw,104px)] font-extrabold text-[color:var(--text)]" />
-            <p className="mt-4 text-[color:var(--muted)] text-xl md:text-2xl max-w-2xl mx-auto">
+            <TitleReel className="text-[clamp(42px,8vw,104px)] font-extrabold text-[color:var(--text)] drop-shadow-2xl" />
+            <p className="mt-4 text-[color:var(--muted)] text-xl md:text-2xl max-w-2xl mx-auto drop-shadow-lg">
               Creating exclusive games for the Stake ecosystem
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <Button asChild size="lg">
+              <Button asChild size="lg" className="shadow-2xl">
                 <Link href="/games">View Games</Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="outline" size="lg" className="shadow-2xl border-white/30 hover:border-white/50">
                 <Link href="/contact">Contact</Link>
               </Button>
             </div>

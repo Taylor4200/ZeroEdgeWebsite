@@ -48,6 +48,10 @@
   }
 
   .focus-ring { @apply focus:outline-none focus:ring-2 focus:ring-[color:var(--primary)] focus:ring-offset-2 focus:ring-offset-[color:var(--bg)]; }
+  
+  .bg-radial-gradient {
+    background: radial-gradient(ellipse at center, transparent 0%, transparent 50%, rgba(0,0,0,0.3) 100%);
+  }
 }
 
 /* Motion helpers */
