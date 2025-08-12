@@ -157,7 +157,7 @@ export function GameDetailView({ game, relatedGames }: GameDetailViewProps) {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <GameCard game={relatedGame} />
+                  <GameCard game={relatedGame} index={index} />
                 </motion.div>
               ))}
             </div>
