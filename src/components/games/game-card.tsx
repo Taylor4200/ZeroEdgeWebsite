@@ -15,6 +15,8 @@ interface GameCardProps {
     rtp_range: string
     max_win: string
     volatility: string
+    thumbYPosition?: string
+    zoomLevel?: string
   }
   index: number
 }
@@ -33,7 +35,11 @@ export function GameCard({ game, index }: GameCardProps) {
               src={game.thumb}
               alt={game.title}
               fill
-              className="object-cover transition-transform duration-700 group-hover:scale-110"
+              className="object-cover transition-transform duration-700"
+              style={{ 
+                objectPosition: game.thumbYPosition ? `center ${game.thumbYPosition}` : 'center center',
+                transform: game.zoomLevel ? `scale(${game.zoomLevel})` : 'scale(1.05)'
+              }}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
             />
             {/* Gradient Overlay */}
@@ -43,7 +49,7 @@ export function GameCard({ game, index }: GameCardProps) {
           {/* RTP Badge */}
           <div className="absolute top-2 left-2 md:top-4 md:left-4 z-10">
             <Badge className="bg-emerald-500/90 text-white font-bold text-[10px] md:text-xs px-2 md:px-3 py-1 rounded-full border-0 shadow-lg">
-              95.4% RTP
+              {game.rtp_range} RTP
             </Badge>
           </div>
 
