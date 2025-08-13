@@ -52,7 +52,7 @@ export default function AdminDashboard() {
       id: 1,
       type: 'game',
       action: 'New game added',
-      item: 'Mysterious Night',
+      item: 'Midnight Prowl',
       time: '2 hours ago',
       icon: Gamepad2
     },

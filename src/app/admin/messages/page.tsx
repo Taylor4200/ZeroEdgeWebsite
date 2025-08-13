@@ -52,7 +52,7 @@ const mockMessages = [
     email: 'mike.chen@example.com',
     phone: '+1 (555) 456-7890',
     subject: 'Bug Report',
-    message: 'I found a bug in the Mysterious Night game. The bonus round sometimes doesn\'t trigger properly. Here are the steps to reproduce...',
+    message: 'I found a bug in the Midnight Prowl game. The bonus round sometimes doesn\'t trigger properly. Here are the steps to reproduce...',
     status: 'replied',
     created_at: '2025-08-10T09:15:00Z',
     ip_address: '192.168.1.102',

@@ -57,7 +57,7 @@ const mockAssets = [
     uploaded_at: '2025-08-10T09:15:00Z',
     dimensions: '400x300',
     format: 'JPG',
-    tags: ['game', 'thumbnail', 'mysterious-night']
+    tags: ['game', 'thumbnail', 'midnight-prowl']
   },
   {
     id: 4,

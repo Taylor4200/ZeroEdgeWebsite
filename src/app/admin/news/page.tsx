@@ -34,7 +34,7 @@ const mockNews = [
   {
     id: 2,
     slug: 'new-game-release',
-    title: 'New Game Release: Mysterious Night',
+    title: 'New Game Release: Midnight Prowl',
     excerpt: 'Experience the thrill of our latest slot game with stunning visuals and exciting gameplay.',
     date: '2025-08-05',
     author: 'Admin',

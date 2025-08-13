@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { Badge } from '@/components/ui/badge'
 
 interface GameCardProps {
@@ -23,9 +23,23 @@ interface GameCardProps {
 
 export function GameCard({ game, index }: GameCardProps) {
   const isLive = game.status === 'live'
+  const router = useRouter()
+  const navigateToGame = () => router.push(`/games/${game.slug}`)
+  const onKeyNavigate = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      navigateToGame()
+    }
+  }
   
   return (
-    <div className="group perspective-1000">
+    <div
+      className="group perspective-1000 relative cursor-pointer"
+      role="link"
+      tabIndex={0}
+      onClick={navigateToGame}
+      onKeyDown={onKeyNavigate}
+    >
       <div className="relative w-full h-full transform-style-preserve-3d transition-all duration-500 group-hover:scale-105 group-hover:rotate-y-12">
         {/* Main Card */}
         <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border border-slate-700/50 shadow-2xl group-hover:shadow-3xl group-hover:shadow-emerald-500/20">
@@ -104,6 +118,7 @@ export function GameCard({ game, index }: GameCardProps) {
         {/* Card Shadow for Depth */}
         <div className="absolute inset-0 rounded-2xl bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-20" />
       </div>
+      {/* Click handled by container for full-card navigation */}
     </div>
   )
 }

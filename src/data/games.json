@@ -1,7 +1,7 @@
 [
   {
-    "slug": "mysterious-night",
-    "title": "Mysterious Night",
+    "slug": "midnight-prowl",
+    "title": "Midnight Prowl",
     "tagline": "Full moon. Full potential.",
     "thumb": "/images/games/Mysterious-Night/thumb.png",
     "hero": "/images/games/Mysterious-Night/hero.jpg",
@@ -16,7 +16,7 @@
       "Double Boost mode (optional feature buy)"
     ],
     "demo_url": "#",
-    "presskit": "/presskits/mysterious-night.zip",
+    "presskit": "/presskits/midnight-prowl.zip",
     "thumbYPosition": "85%"
   },
   {

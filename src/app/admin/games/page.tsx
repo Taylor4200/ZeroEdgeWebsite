@@ -21,8 +21,8 @@ import { Badge } from '@/components/ui/badge'
 const mockGames = [
   {
     id: 1,
-    slug: 'mysterious-night',
-    title: 'Mysterious Night',
+    slug: 'midnight-prowl',
+    title: 'Midnight Prowl',
     status: 'live',
     rtp_range: '96.5%',
     max_win: '10,000x',
