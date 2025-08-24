@@ -60,27 +60,6 @@
     "thumbYPosition": "10%"
   },
   {
-    "slug": "SirWinsalot",
-    "title": "Sir Winsalot",
-    "tagline": "Victory awaits the bold.",
-    "thumb": "/images/games/SirWinsalot/thumb.png",
-    "hero": "/images/games/SirWinsalot/thumb.png",
-    "status": "coming-soon",
-    "mechanics": ["5x3", "25 Lines", "Free Spins", "Wild Substitutions"],
-    "rtp_range": "96.0%",
-    "volatility": "Medium",
-    "max_win": "7,500x",
-    "features": [
-      "Royal Free Spins with expanding wilds",
-      "Noble Wild multipliers up to 5x",
-      "Royal Boost feature buy"
-    ],
-    "demo_url": "#",
-    "presskit": "/presskits/sir-wins-alot.zip",
-    "thumbYPosition": "100%",
-    "zoomLevel": "1"
-  },
-  {
     "slug": "neon-ninjas",
     "title": "Neon Ninjas",
     "tagline": "Stealth meets neon chaos.",
@@ -100,5 +79,26 @@
     "presskit": "/presskits/neon-ninjas.zip",
     "thumbYPosition": "50%",
     "zoomLevel": "1.05"
+  },
+  {
+    "slug": "quest-quill",
+    "title": "Quest & Quill",
+    "tagline": "Write your destiny, forge your legend.",
+    "thumb": "/images/games/Quest-Quill/thumb.png",
+    "hero": "/images/games/Quest-Quill/hero.jpg",
+    "status": "coming-soon",
+    "mechanics": ["6x5", "50 Lines", "Free Spins", "Cascading Symbols"],
+    "rtp_range": "96.3%",
+    "volatility": "Medium-High",
+    "max_win": "10,000x",
+    "features": [
+      "Epic Saga Free Spins with story progression",
+      "Legendary Rune Wilds with multiplier boosts",
+      "Hero's Journey feature buy"
+    ],
+    "demo_url": "#",
+    "presskit": "/presskits/quest-quill.zip",
+    "thumbYPosition": "70%",
+    "zoomLevel": "1.1"
   }
 ]
