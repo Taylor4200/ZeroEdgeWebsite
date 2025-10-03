@@ -3,7 +3,7 @@
     "slug": "midnight-prowl",
     "title": "Midnight Prowl",
     "tagline": "Full moon. Full potential.",
-    "thumb": "/images/games/Mysterious-Night/thumb.png",
+    "thumb": "/images/games/Mysterious-Night/Thumb.avif",
     "hero": "/images/games/Mysterious-Night/hero.jpg",
     "status": "live",
     "mechanics": ["2x-100x wilds", "10,000x Max Win", "Free Spins", "Multiplier Wilds"],
@@ -20,85 +20,23 @@
     "thumbYPosition": "85%"
   },
   {
-    "slug": "the-heist",
-    "title": "The Heist",
-    "tagline": "Big Score, Bigger Stakes.",
-    "thumb": "/images/games/The-Heist/thumb.png",
-    "hero": "/images/games/The-Heist/hero.jpg",
-    "status": "coming-soon",
+    "slug": "political-cards",
+    "title": "Political Cards",
+    "tagline": "Play your cards right.",
+    "thumb": "/images/games/PoliticalCards/Thumb.avif",
+    "hero": "/images/games/PoliticalCards/hero.jpg",
+    "status": "live",
     "mechanics": ["5x4", "40 Lines", "Free Spins", "Cascading Reels"],
-    "rtp_range": "96.8%",
-    "volatility": "Medium-High",
-    "max_win": "5,000x",
-    "features": [
-      "Neon Grid Free Spins with expanding reels",
-      "Cyber Wild multipliers up to 10x",
-      "Neon Boost feature buy"
-    ],
-    "demo_url": "#",
-    "presskit": "/presskits/neon-empire.zip",
-    "thumbYPosition": "100%"
-  },
-  {
-    "slug": "katana-protocol",
-    "title": "Katana Protocol",
-    "tagline": "Sharp Steel, Silent Chaos.",
-    "thumb": "/images/games/Katana-Protocol/thumb.png",
-    "hero": "/images/games/Katana-Protocol/hero.jpg",
-    "status": "coming-soon",
-    "mechanics": ["6x4", "50 Lines", "Free Spins", "Sticky Wilds"],
     "rtp_range": "96.5%",
-    "volatility": "High",
-    "max_win": "5,000x",
-    "features": [
-      "Crystal Cascade Free Spins",
-      "Ancient Wild multipliers",
-      "Crystal Power feature buy"
-    ],
-    "demo_url": "#",
-    "presskit": "/presskits/crystal-quest.zip",
-    "thumbYPosition": "10%"
-  },
-  {
-    "slug": "neon-ninjas",
-    "title": "Neon Ninjas",
-    "tagline": "Stealth meets neon chaos.",
-    "thumb": "/images/games/neon-ninjas/thumb.png",
-    "hero": "/images/games/neon-ninjas/thumb.png",
-    "status": "coming-soon",
-    "mechanics": ["5x4", "40 Lines", "Free Spins", "Sticky Wilds"],
-    "rtp_range": "96.2%",
-    "volatility": "High",
-    "max_win": "5,000x",
-    "features": [
-      "Neon Stealth Free Spins with expanding reels",
-      "Ninja Wild multipliers up to 15x",
-      "Shadow Strike feature buy"
-    ],
-    "demo_url": "#",
-    "presskit": "/presskits/neon-ninjas.zip",
-    "thumbYPosition": "50%",
-    "zoomLevel": "1.05"
-  },
-  {
-    "slug": "quest-quill",
-    "title": "Quest & Quill",
-    "tagline": "Write your destiny, forge your legend.",
-    "thumb": "/images/games/Quest-Quill/thumb.png",
-    "hero": "/images/games/Quest-Quill/hero.jpg",
-    "status": "coming-soon",
-    "mechanics": ["6x5", "50 Lines", "Free Spins", "Cascading Symbols"],
-    "rtp_range": "96.3%",
     "volatility": "Medium-High",
-    "max_win": "10,000x",
+    "max_win": "8,888x",
     "features": [
-      "Epic Saga Free Spins with story progression",
-      "Legendary Rune Wilds with multiplier boosts",
-      "Hero's Journey feature buy"
+      "Democracy Free Spins with stacked symbols",
+      "Political Wild multipliers up to 12x",
+      "Election Day feature buy"
     ],
     "demo_url": "#",
-    "presskit": "/presskits/quest-quill.zip",
-    "thumbYPosition": "70%",
-    "zoomLevel": "1.1"
+    "presskit": "/presskits/political-cards.zip",
+    "thumbYPosition": "50%"
   }
 ]
