@@ -17,6 +17,7 @@ export interface Game {
   demo_url: string
   presskit: string
   thumbYPosition?: string // Optional Y position for thumbnail (e.g., '25%', '75%', 'top', 'bottom')
+  play_url?: string
 }
 
 export interface NewsPost {

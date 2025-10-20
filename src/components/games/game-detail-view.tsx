@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Container } from '@/components/ui/container'
 import { Button } from '@/components/ui/button'
@@ -21,8 +21,19 @@ export function GameDetailView({ game, relatedGames }: GameDetailViewProps) {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] overflow-hidden">
-        <div className="absolute inset-0 bg-[color:var(--primary)]/10" />
-        <div className="absolute inset-0 bg-[color:var(--bg)]/80" />
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src={game.thumb}
+            alt={game.title}
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        {/* Overlays */}
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
         <Container className="relative h-full flex items-end pb-20">
           <motion.div
@@ -40,14 +51,11 @@ export function GameDetailView({ game, relatedGames }: GameDetailViewProps) {
             <h1 className="text-4xl md:text-6xl font-bold mb-4 text-[color:var(--text)]">{game.title}</h1>
             <p className="text-xl text-[color:var(--muted)] mb-6">{game.tagline}</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg">
-                <Link href={game.demo_url}>Play Demo</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <a href={game.presskit} download>
-                  Download Press Kit
-                </a>
-              </Button>
+              {game.play_url && (
+                <Button asChild variant="primary" size="lg">
+                  <a href={game.play_url} target="_blank" rel="noopener noreferrer">Play on Stake</a>
+                </Button>
+              )}
             </div>
           </motion.div>
         </Container>

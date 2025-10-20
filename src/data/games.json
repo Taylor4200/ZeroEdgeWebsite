@@ -17,7 +17,8 @@
     ],
     "demo_url": "#",
     "presskit": "/presskits/midnight-prowl.zip",
-    "thumbYPosition": "85%"
+    "thumbYPosition": "85%",
+    "play_url": "https://stake.com/casino/games/zeroedge-midnight-prowl"
   },
   {
     "slug": "political-cards",
@@ -37,7 +38,8 @@
     ],
     "demo_url": "#",
     "presskit": "/presskits/political-cards.zip",
-    "thumbYPosition": "50%"
+    "thumbYPosition": "50%",
+    "play_url": "https://stake.com/casino/games/zeroedge-political-cards"
   },
   {
     "slug": "night-of-the-horseman",
@@ -57,7 +59,8 @@
     ],
     "demo_url": "#",
     "presskit": "/presskits/night-of-the-horseman.zip",
-    "thumbYPosition": "60%"
+    "thumbYPosition": "60%",
+    "play_url": "https://stake.com/casino/games/zeroedge-night-of-the-horseman"
   },
   {
     "slug": "stars-and-spins",
@@ -77,6 +80,7 @@
     ],
     "demo_url": "#",
     "presskit": "/presskits/stars-and-spins.zip",
-    "thumbYPosition": "50%"
+    "thumbYPosition": "50%",
+    "play_url": "https://stake.com/casino/games/zeroedge-stars-and-spins"
   }
 ]
