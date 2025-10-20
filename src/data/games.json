@@ -38,5 +38,45 @@
     "demo_url": "#",
     "presskit": "/presskits/political-cards.zip",
     "thumbYPosition": "50%"
+  },
+  {
+    "slug": "night-of-the-horseman",
+    "title": "Night of the Horseman",
+    "tagline": "Ride into the dark.",
+    "thumb": "/images/games/NightOfTheHorseman/Thumb.avif",
+    "hero": "/images/games/NightOfTheHorseman/Thumb.avif",
+    "status": "live",
+    "mechanics": ["5x3", "25 Lines", "Free Spins", "Wild Multipliers"],
+    "rtp_range": "96.0%",
+    "volatility": "High",
+    "max_win": "10,000x",
+    "features": [
+      "Sticky Wilds during free spins",
+      "Expanding symbols",
+      "Optional feature buy"
+    ],
+    "demo_url": "#",
+    "presskit": "/presskits/night-of-the-horseman.zip",
+    "thumbYPosition": "60%"
+  },
+  {
+    "slug": "stars-and-spins",
+    "title": "Stars and Spins",
+    "tagline": "Spin among the constellations.",
+    "thumb": "/images/games/StarsAndSpins/Thumb.avif",
+    "hero": "/images/games/StarsAndSpins/Thumb.avif",
+    "status": "live",
+    "mechanics": ["6x4", "4096 Ways", "Cascading Reels", "Free Spins"],
+    "rtp_range": "96.2%",
+    "volatility": "Medium-High",
+    "max_win": "12,000x",
+    "features": [
+      "Symbol avalanches with multipliers",
+      "Expanding wild stars",
+      "Feature buy"
+    ],
+    "demo_url": "#",
+    "presskit": "/presskits/stars-and-spins.zip",
+    "thumbYPosition": "50%"
   }
 ]
